@@ -3,7 +3,13 @@ package com.tuapp.libros.dto;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class UsuarioDTO {
 
     private Long id;
@@ -15,40 +21,4 @@ public class UsuarioDTO {
     @NotBlank(message = "El email es obligatorio")
     @Email(message = "Email inválido")
     private String email;
-
-    // Constructor vacío
-    public UsuarioDTO() {
-    }
-
-    // Constructor con parámetros
-    public UsuarioDTO(Long id, String nombre, String email) {
-        this.id = id;
-        this.nombre = nombre;
-        this.email = email;
-    }
-
-    // Getters y Setters
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
 }
